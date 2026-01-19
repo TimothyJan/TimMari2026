@@ -1,0 +1,138 @@
+<section id="highlights">
+  <div class="highlights container">
+    <div class="highlight-top">
+      <h1 class="section-title">Recent <span>Highlights</span></h1>
+      <p class="section-subtitle">Follow our latest adventures from around the world. Each journey tells a unique story of discovery, love, and unforgettable moments.</p>
+    </div>
+    <div class="highlight-bottom">
+
+      @for(highlight of highlightList; track highlight.id) {
+        <div class="highlight-item" (click)="openHighlight( highlight.id )">
+          <div class="highlight-image">
+            <img [src]="highlight.imageUrl" alt="image" />
+            <div class="highlight-date">{{ highlight.date }}</div>
+          </div>
+          <div class="highlight-content">
+            <div class="location-tag">
+              <span class="location-icon">📍</span>
+              <span class="location-text">{{ highlight.location }}</span>
+            </div>
+            <h2>{{ highlight.title }}</h2>
+            <p class="highlight-excerpt">{{ highlight.description }}</p>
+            <div class="highlight-meta">
+              <span class="days">{{ highlight.days }} days</span>
+              <span class="photos">{{ highlight.photos }} photos</span>
+            </div>
+            <div class="highlight">
+              <span class="highlight-icon">⭐</span>
+              <span class="highlight-text"><p>Highlight: {{ highlight.highlights[0] }}</p></span>
+            </div>
+          </div>
+        </div>
+      }
+
+    </div>
+  </div>
+</section>
+
+<!-- Highlight Modal -->
+ @if(selectedHighlight) {
+  <div class="highlight-modal" (click)="closeHighlight()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <button class="close-modal" (click)="closeHighlight()">×</button>
+
+      <!-- <div class="modal-image">
+        <img [src]="selectedHighlight.imageUrl" [alt]="selectedHighlight.title" />
+      </div> -->
+
+            <!-- Image Carousel -->
+      <div class="modal-image-carousel">
+        <div class="carousel-container">
+          <!-- Main Image Display -->
+          <div class="carousel-image-wrapper">
+            @if(selectedHighlight.images.length > 0) {
+              <img
+                [src]="selectedHighlight.images[currentImageIndex]"
+                [alt]="selectedHighlight.title + ' image ' + (currentImageIndex + 1)"
+                class="carousel-image"
+              />
+            } @else {
+              <img
+                [src]="selectedHighlight.imageUrl"
+                [alt]="selectedHighlight.title"
+                class="carousel-image"
+              />
+            }
+          </div>
+
+          <!-- Carousel Navigation -->
+          @if(selectedHighlight.images.length > 1) {
+            <button class="carousel-nav prev" (click)="prevImage(); $event.stopPropagation()">
+              <span class="nav-arrow">❮</span>
+            </button>
+            <button class="carousel-nav next" (click)="nextImage(); $event.stopPropagation()">
+              <span class="nav-arrow">❯</span>
+            </button>
+
+            <!-- Image Counter -->
+            <div class="image-counter">
+              {{ currentImageIndex + 1 }} / {{ selectedHighlight.images.length }}
+            </div>
+
+            <!-- Thumbnail Navigation (Optional) -->
+            <div class="carousel-thumbnails">
+              @for(image of selectedHighlight.images; track $index; let i = $index) {
+                <div
+                  class="thumbnail"
+                  [class.active]="i === currentImageIndex"
+                  (click)="currentImageIndex = i; $event.stopPropagation()"
+                >
+                  <img [src]="image" [alt]="'Thumbnail ' + (i + 1)" />
+                </div>
+              }
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="modal-details">
+        <div class="modal-header">
+          <div class="modal-location">
+            <span class="location-icon">📍</span>
+            <span class="location-text">{{ selectedHighlight.location }}</span>
+          </div>
+          <h2>{{ selectedHighlight.title }}</h2>
+          <div class="modal-date">{{ selectedHighlight.date }}</div>
+        </div>
+        <div class="modal-body">
+          <p class="modal-description">{{ selectedHighlight.description }}</p>
+          <div class="modal-highlights">
+            <h3>Highlights</h3>
+            <ul>
+              @for(highlight of selectedHighlight.highlights; track $index) {
+                <li>
+                  <span class="highlight-icon">✨</span> {{ highlight }}
+                </li>
+              }
+            </ul>
+          </div>
+          <div class="modal-stats">
+            <div class="stat">
+              <span class="stat-value">{{ selectedHighlight.days }}</span>
+              <span class="stat-label">Days</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">{{ selectedHighlight.photos }}</span>
+              <span class="stat-label">Photos</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">{{ selectedHighlight.memories }}</span>
+              <span class="stat-label">Memories</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ }
+
