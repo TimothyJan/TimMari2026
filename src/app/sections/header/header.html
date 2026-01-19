@@ -1,0 +1,25 @@
+<section id="header">
+  <div class="header container">
+    <div class="nav-bar">
+      <div class="brand">
+        <a href="#hero">
+          <h1><span>T</span>im <span>M</span>ari</h1>
+        </a>
+      </div>
+      <div class="nav-list">
+        <div class="hamburger"
+            [class.active]="isMenuOpen"
+            (click)="toggleMenu()">
+          <div class="bar"></div>
+        </div>
+        <ul [class.active]="isMenuOpen">
+          <li><a href="#intro" data-after="Intro" (click)="closeMenu()">Intro</a></li>
+          <li><a href="#highlights" data-after="Highlights" (click)="closeMenu()">Highlights</a></li>
+          <li><a href="#timeline" data-after="Timeline" (click)="closeMenu()">Timeline</a></li>
+          <!-- <li><a href="#about" data-after="About" (click)="closeMenu()">About</a></li>
+          <li><a href="#contact" data-after="Contact" (click)="closeMenu()">Contacts</a></li> -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
