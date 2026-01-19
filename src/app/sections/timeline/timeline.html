@@ -1,0 +1,156 @@
+<section id="timeline">
+  <div class="timeline container">
+    <div class="timeline-header">
+      <h1 class="section-title">Our <span>Timeline</span></h1>
+      <p class="section-subtitle">A chronological journey through our adventures. Each milestone represents a special moment in our story together.</p>
+    </div>
+
+    <div class="timeline-container">
+      <div class="timeline-track"></div>
+
+      @for(item of timelineList; track item.id; let i = $index) {
+        <div
+          class="timeline-item"
+          [class.left]="i % 2 === 0"
+          [class.right]="i % 2 === 1"
+          (click)="openTimelineItem(item.id)"
+        >
+          <div class="timeline-content">
+            <div class="timeline-date">{{ item.date }}</div>
+
+            <div class="timeline-image">
+              <img [src]="item.imageUrl" [alt]="item.title" />
+              <div class="timeline-overlay">
+                <div class="view-details">View Details</div>
+              </div>
+            </div>
+
+            <div class="timeline-info">
+              <div class="timeline-location">
+                <span class="location-icon">📍</span>
+                <span class="location-text">{{ item.location }}</span>
+              </div>
+              <h3 class="timeline-title">{{ item.title }}</h3>
+              <p class="timeline-description">{{ item.description }}</p>
+
+              <div class="timeline-highlight">
+                <span class="highlight-icon">⭐</span>
+                <span class="highlight-text">{{ item.highlights[0] }}</span>
+              </div>
+
+              <div class="timeline-meta">
+                <span class="timeline-days">{{ item.days }} days</span>
+                <span class="timeline-photos">{{ item.photos }} photos</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+          </div>
+        </div>
+      } @empty {
+        <div class="empty-timeline">
+          <p>Add new timeline items to see them here</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Timeline Modal -->
+@if(selectedTimelineItem) {
+  <div class="timeline-modal" (click)="closeTimelineItem()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <button class="close-modal" (click)="closeTimelineItem()">×</button>
+
+      <!-- Image Carousel -->
+      <div class="modal-image-carousel">
+        <div class="carousel-container">
+          <!-- Main Image Display -->
+          <div class="carousel-image-wrapper">
+            @if(selectedTimelineItem.images.length > 0) {
+              <img
+                [src]="selectedTimelineItem.images[currentImageIndex]"
+                [alt]="selectedTimelineItem.title + ' image ' + (currentImageIndex + 1)"
+                class="carousel-image"
+              />
+            } @else {
+              <img
+                [src]="selectedTimelineItem.imageUrl"
+                [alt]="selectedTimelineItem.title"
+                class="carousel-image"
+              />
+            }
+          </div>
+
+          <!-- Carousel Navigation -->
+          @if(selectedTimelineItem.images.length > 1) {
+            <button class="carousel-nav prev" (click)="prevImage(); $event.stopPropagation()">
+              <span class="nav-arrow">❮</span>
+            </button>
+            <button class="carousel-nav next" (click)="nextImage(); $event.stopPropagation()">
+              <span class="nav-arrow">❯</span>
+            </button>
+
+            <!-- Image Counter -->
+            <div class="image-counter">
+              {{ currentImageIndex + 1 }} / {{ selectedTimelineItem.images.length }}
+            </div>
+
+            <!-- Thumbnail Navigation (Optional) -->
+            <div class="carousel-thumbnails">
+              @for(image of selectedTimelineItem.images; track $index; let i = $index) {
+                <div
+                  class="thumbnail"
+                  [class.active]="i === currentImageIndex"
+                  (click)="currentImageIndex = i; $event.stopPropagation()"
+                >
+                  <img [src]="image" [alt]="'Thumbnail ' + (i + 1)" />
+                </div>
+              }
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="modal-details">
+        <div class="modal-header">
+          <div class="modal-location">
+            <span class="location-icon">📍</span>
+            <span class="location-text">{{ selectedTimelineItem.location }}</span>
+          </div>
+          <h2>{{ selectedTimelineItem.title }}</h2>
+          <div class="modal-date">{{ selectedTimelineItem.date }}</div>
+        </div>
+        <div class="modal-body">
+          <p class="modal-description">{{ selectedTimelineItem.description }}</p>
+          <div class="modal-highlights">
+            <h3>Highlights</h3>
+            <ul>
+              @for(highlight of selectedTimelineItem.highlights; track $index) {
+                <li>
+                  <span class="highlight-icon">✨</span> {{ highlight }}
+                </li>
+              }
+            </ul>
+          </div>
+          <div class="modal-stats">
+            <div class="stat">
+              <span class="stat-value">{{ selectedTimelineItem.days }}</span>
+              <span class="stat-label">Days</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">{{ selectedTimelineItem.photos }}</span>
+              <span class="stat-label">Photos</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">{{ selectedTimelineItem.memories }}</span>
+              <span class="stat-label">Memories</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+}
