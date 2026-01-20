@@ -1,0 +1,50 @@
+<section id="restaurants">
+  <div class="restaurants container">
+    <div class="restaurants-header">
+      <h1 class="section-title">Our <span>Top 3</span> Restaurants</h1>
+      <p class="section-subtitle">From all our travels, these are the dining experiences that left the deepest impressions. Each one tells a story of flavor, ambiance, and shared moments.</p>
+    </div>
+
+    <div class="restaurants-container">
+      @for(restaurant of restaurantList; track restaurant.id; let rank = $index) {
+        <div
+          class="restaurant-card"
+          [class.top-card]="rank === 0"
+        >
+          <div class="rank-badge">#{{ rank + 1 }}</div>
+
+          <div class="restaurant-image">
+            <img [src]="restaurant.imageUrl" [alt]="restaurant.name" />
+            <div class="restaurant-overlay">
+              <div class="restaurant-rank-text">{{ rank === 0 ? 'Top Pick' : '# ' + (rank + 1) }}</div>
+            </div>
+          </div>
+
+          <div class="restaurant-content">
+            <div class="restaurant-header">
+              <h3 class="restaurant-name">{{ restaurant.name }}</h3>
+              <div class="restaurant-meta">
+                <span class="cuisine">{{ restaurant.cuisine }}</span>
+              </div>
+            </div>
+
+            <div class="restaurant-location">
+              <span class="location-icon">📍</span>
+              <span class="location-text">{{ restaurant.location }}</span>
+            </div>
+
+            <p class="restaurant-description">{{ restaurant.description }}</p>
+
+          </div>
+        </div>
+      }
+    </div>
+
+    <app-random-generator
+      [title]="'Restaurants'"
+      [itemLabel]="'restaurants'"
+      [itemTypeName]="'restaurant'">
+    </app-random-generator>
+
+  </div>
+</section>
