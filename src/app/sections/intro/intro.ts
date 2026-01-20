@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import data from '../../../assets/data.json';
 
 @Component({
   selector: 'app-intro',
@@ -7,9 +8,9 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
   styleUrl: './intro.css',
 })
 export class Intro implements OnInit, AfterViewInit {
-  countries: string[] = ["Japan", "Taiwan", "United States"];
-  hikeCount: number = 10;
-  restaurantCount: number = 1000;
+
+  hikeCount: number = data.hikes.length;
+  restaurantCount: number = data.restaurants.length + data.desserts.length;
 
   daysSince: number = 0;
   animatedDaysSince: number = 0;
