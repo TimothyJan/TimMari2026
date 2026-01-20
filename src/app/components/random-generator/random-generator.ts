@@ -13,8 +13,7 @@ export class RandomGenerator implements OnInit {
   description: string = 'Click the button below to get a random selection from our list.';
   @Input() itemLabel: string = "";
   itemList: string[] = [];
-  @Input() itemTypeName: string = 'items';
-  buttonText: string = 'Pick a Random ' + this.itemTypeName;
+  @Input() itemTypeName: string = 'item';
 
   // Customizable icons
   icon: string = '🎲';
@@ -25,11 +24,6 @@ export class RandomGenerator implements OnInit {
   showItemList: boolean = false;
 
   ngOnInit() {
-    // Set default itemTypeName based on title if not provided
-    if (this.itemTypeName === 'items') {
-      this.itemTypeName = this.title.toLowerCase() + 's';
-    }
-
     this.assignItemList();
   }
 
