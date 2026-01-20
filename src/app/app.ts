@@ -6,6 +6,7 @@ import { Intro } from "./sections/intro/intro";
 import { Highlights } from "./sections/highlights/highlights";
 import { Timeline } from "./sections/timeline/timeline";
 import { Restaurants } from "./sections/restaurants/restaurants";
+import { Hikes } from "./sections/hikes/hikes";
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,8 @@ import { Restaurants } from "./sections/restaurants/restaurants";
     Intro,
     Highlights,
     Timeline,
-    Restaurants
+    Restaurants,
+    Hikes
 ],
   templateUrl: './app.html',
   styleUrl: './app.css'
