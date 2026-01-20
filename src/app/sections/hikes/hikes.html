@@ -1,0 +1,64 @@
+<section id="hikes">
+  <div class="hikes container">
+    <div class="hikes-header">
+      <h1 class="section-title">Our <span>#1</span> Hike</h1>
+      <p class="section-subtitle">From all our adventures, this is the hike that stands above the rest. An unforgettable journey that tested our limits and rewarded us with breathtaking beauty.</p>
+    </div>
+
+    <div class="hikes-container">
+      <div class="hike-card top-card">
+        <div class="rank-badge">#1</div>
+
+        <div class="hike-image">
+          <img [src]="topHike.imageUrl" [alt]="topHike.name" />
+          <div class="hike-overlay">
+            <div class="hike-rank-text">Top Adventure</div>
+          </div>
+        </div>
+
+        <div class="hike-content">
+          <div class="hike-header">
+            <h3 class="hike-name">{{ topHike.name }}</h3>
+            <div class="hike-meta">
+              <span class="difficulty" [class.extreme]="topHike.difficulty === 'Extreme'">
+                {{ topHike.difficulty }}
+              </span>
+            </div>
+          </div>
+
+          <div class="hike-location">
+            <span class="location-icon">📍</span>
+            <span class="location-text">{{ topHike.location }}</span>
+          </div>
+
+          <p class="hike-description">{{ topHike.description }}</p>
+
+          <div class="hike-stats">
+            <div class="stat">
+              <span class="stat-icon">🥾</span>
+              <div class="stat-details">
+                <span class="stat-value">{{ topHike.distance }}</span>
+                <span class="stat-label">Distance</span>
+              </div>
+            </div>
+            <div class="stat">
+              <span class="stat-icon">📈</span>
+              <div class="stat-details">
+                <span class="stat-value">{{ topHike.elevationGain }}</span>
+                <span class="stat-label">Elevation</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <app-random-generator
+      [title]="'Hikes'"
+      [itemLabel]="'hikes'"
+      [itemTypeName]="'hike'">
+    </app-random-generator>
+
+  </div>
+</section>
