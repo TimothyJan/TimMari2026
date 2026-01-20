@@ -3,58 +3,63 @@
     <div class="timeline-header">
       <h1 class="section-title">Our <span>Timeline</span></h1>
       <p class="section-subtitle">A chronological journey through our adventures. Each milestone represents a special moment in our story together.</p>
+      <button class="toggle-button" (click)="toggleItemList()">
+        {{ showItemList ? 'Hide' : 'Show' }} Timeline
+      </button>
     </div>
 
-    <div class="timeline-container">
-      <div class="timeline-track"></div>
+    @if(showItemList) {
+      <div class="timeline-container">
+        <div class="timeline-track"></div>
 
-      @for(item of timelineList; track item.id; let i = $index) {
-        <div
-          class="timeline-item"
-          [class.left]="i % 2 === 0"
-          [class.right]="i % 2 === 1"
-          (click)="openTimelineItem(item.id)"
-        >
-          <div class="timeline-content">
-            <div class="timeline-date">{{ item.date }}</div>
+        @for(item of timelineList; track item.id; let i = $index) {
+          <div
+            class="timeline-item"
+            [class.left]="i % 2 === 0"
+            [class.right]="i % 2 === 1"
+            (click)="openTimelineItem(item.id)"
+          >
+            <div class="timeline-content">
+              <div class="timeline-date">{{ item.date }}</div>
 
-            <div class="timeline-image">
-              <img [src]="item.imageUrl" [alt]="item.title" />
-              <div class="timeline-overlay">
-                <div class="view-details">View Details</div>
+              <div class="timeline-image">
+                <img [src]="item.imageUrl" [alt]="item.title" />
+                <div class="timeline-overlay">
+                  <div class="view-details">View Details</div>
+                </div>
+              </div>
+
+              <div class="timeline-info">
+                <div class="timeline-location">
+                  <span class="location-icon">📍</span>
+                  <span class="location-text">{{ item.location }}</span>
+                </div>
+                <h3 class="timeline-title">{{ item.title }}</h3>
+                <p class="timeline-description">{{ item.description }}</p>
+
+                <div class="timeline-highlight">
+                  <span class="highlight-icon">⭐</span>
+                  <span class="highlight-text">{{ item.highlights[0] }}</span>
+                </div>
+
+                <div class="timeline-meta">
+                  <span class="timeline-days">{{ item.days }} days</span>
+                  <span class="timeline-photos">{{ item.photos }} photos</span>
+                </div>
               </div>
             </div>
 
-            <div class="timeline-info">
-              <div class="timeline-location">
-                <span class="location-icon">📍</span>
-                <span class="location-text">{{ item.location }}</span>
-              </div>
-              <h3 class="timeline-title">{{ item.title }}</h3>
-              <p class="timeline-description">{{ item.description }}</p>
-
-              <div class="timeline-highlight">
-                <span class="highlight-icon">⭐</span>
-                <span class="highlight-text">{{ item.highlights[0] }}</span>
-              </div>
-
-              <div class="timeline-meta">
-                <span class="timeline-days">{{ item.days }} days</span>
-                <span class="timeline-photos">{{ item.photos }} photos</span>
-              </div>
+            <div class="timeline-marker">
+              <div class="marker-dot"></div>
             </div>
           </div>
-
-          <div class="timeline-marker">
-            <div class="marker-dot"></div>
+        } @empty {
+          <div class="empty-timeline">
+            <p>Add new timeline items to see them here</p>
           </div>
-        </div>
-      } @empty {
-        <div class="empty-timeline">
-          <p>Add new timeline items to see them here</p>
-        </div>
-      }
-    </div>
+        }
+      </div>
+    }
   </div>
 </section>
 

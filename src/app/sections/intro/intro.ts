@@ -8,14 +8,14 @@ import data from '../../../assets/data.json';
   styleUrl: './intro.css',
 })
 export class Intro implements OnInit, AfterViewInit {
-
-  hikeCount: number = data.hikes.length;
-  restaurantCount: number = data.restaurants.length + data.desserts.length;
-
   daysSince: number = 0;
   animatedDaysSince: number = 0;
-  animatedRestaurantCount: number = 0;
-  animatedHikeCount: number = 0;
+
+  restaurantCount: number = data.restaurants.length + data.desserts.length;
+  animatedRestaurantCount: number = data.restaurants.length + data.desserts.length;
+
+  hikeCount: number = data.hikes.length;
+  animatedHikeCount: number = data.hikes.length;
 
   currentDateTime: string = '';
   lastUpdated: string = '';

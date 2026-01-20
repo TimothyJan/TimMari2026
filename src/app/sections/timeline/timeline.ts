@@ -11,6 +11,7 @@ export class Timeline {
   selectedTimelineItem: HighlightModel | null = null;
   isModalOpen = false;
   currentImageIndex: number = 0;
+  showItemList: boolean = false;
 
   timelineList: HighlightModel[] = [
     {
@@ -390,4 +391,9 @@ export class Timeline {
       this.closeTimelineItem();
     }
   }
+
+  toggleItemList(): void {
+    this.showItemList = !this.showItemList;
+  }
+
 }
