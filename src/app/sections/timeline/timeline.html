@@ -9,6 +9,30 @@
     </div>
 
     @if(showItemList) {
+      <!-- Month/Year Scroller -->
+      @if(scrollerItems.length > 0) {
+        <div
+          class="timeline-scroller"
+          [class.hidden]="!isTimelineInView"
+        >
+          <div class="timeline-scroller-label">Timeline</div>
+          @for(item of scrollerItems; track item.id; let i = $index) {
+            <div
+              class="timeline-scroll-item"
+              [class.active]="item.id === activeScrollerItem"
+              (click)="scrollToMonth(item.id)"
+              title="Scroll to {{ item.label }}"
+            >
+              <div class="timeline-scroll-dot"></div>
+              <div class="timeline-scroll-label">{{ item.label }}</div>
+            </div>
+            @if(i < scrollerItems.length - 1) {
+              <div class="timeline-scroll-connector"></div>
+            }
+          }
+        </div>
+      }
+
       <div class="timeline-container">
         <div class="timeline-track"></div>
 
@@ -18,9 +42,10 @@
             [class.left]="i % 2 === 0"
             [class.right]="i % 2 === 1"
             (click)="openTimelineItem(item.id)"
+            [attr.data-month-year]="item.date.getFullYear() + '-' + item.date.getMonth()"
           >
             <div class="timeline-content">
-              <div class="timeline-date">{{ item.date }}</div>
+              <div class="timeline-date">{{ item.date | date: 'MMMM yyyy' }}</div>
 
               <div class="timeline-image">
                 <img [src]="item.imageUrl" [alt]="item.title" />

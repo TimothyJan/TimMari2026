@@ -2,7 +2,7 @@ interface HighlightModel {
   id: string;
   title: string;
   location: string;
-  date: string;
+  date: Date;
   description: string;
   imageUrl: string;
   images: string[];
