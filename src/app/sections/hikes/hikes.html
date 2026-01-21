@@ -54,6 +54,74 @@
       </div>
     </div>
 
+    <!-- Add this after the main hike card but before the random generator -->
+    <div class="total-stats-section">
+      <div class="total-stats-container">
+        <div class="total-stats-header">
+          <h2 class="section-title">Our <span>Hiking</span> Totals</h2>
+          <p class="section-subtitle">Cumulative achievements from all our hiking adventures together</p>
+        </div>
+
+        <div class="total-stats-grid">
+          <div class="total-stat-card">
+            <div class="total-stat-icon">🥾</div>
+            <div class="total-stat-content">
+              <div class="total-stat-number">{{ formatNumber(totalDistance) }}</div>
+              <div class="total-stat-label">Total Miles</div>
+              <div class="total-stat-subtext">Across {{ countriesTraveledString }}</div>
+            </div>
+            <div class="total-stat-decoration">
+              <div class="stat-mountains">⛰️⛰️</div>
+            </div>
+            <div class="stat-comparison">
+              <span class="comparison-icon">🛣️</span>
+              <span class="comparison-text">Nearly {{ getMarathonCount() }} marathons!</span>
+            </div>
+          </div>
+
+          <div class="total-stat-card">
+            <div class="total-stat-icon">📈</div>
+            <div class="total-stat-content">
+              <div class="total-stat-number">{{ formatNumber(totalElevation) }}</div>
+              <div class="total-stat-label">Total Feet</div>
+              <div class="total-stat-subtext">Vertical elevation gained</div>
+            </div>
+            <div class="total-stat-decoration">
+              <div class="stat-peaks">🏔️🏔️</div>
+            </div>
+            <div class="stat-comparison">
+              <span class="comparison-icon">🏔️</span>
+              <span class="comparison-text">That's {{ getEverestCount() }} Mt. Everests!</span>
+            </div>
+          </div>
+
+          <div class="total-stat-card">
+            <div class="total-stat-icon">🗺️</div>
+            <div class="total-stat-content">
+              <div class="total-stat-number">{{ totalHikes }}</div>
+              <div class="total-stat-label">Total Hikes</div>
+              <div class="total-stat-subtext">{{ totalHikes }} chapters in our hiking book</div>
+            </div>
+            <div class="total-stat-decoration">
+              <div class="stat-compass">🧭</div>
+            </div>
+            <div class="stat-comparison">
+              <span class="comparison-icon">⭐</span>
+              <span class="comparison-text">Our love story, trail by trail</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="achievement-banner">
+          <div class="achievement-icon">🏆</div>
+          <div class="achievement-content">
+            <h3 class="achievement-title">Trailblazers Together</h3>
+            <p class="achievement-text">We've covered {{ formatNumber(totalDistance) }} miles and climbed {{ formatNumber(totalElevation) }} feet across {{ totalHikes }} hikes. Every step, every summit, every view - shared.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <app-random-generator
       [title]="'Hikes'"
       [itemLabel]="'hikes'"
