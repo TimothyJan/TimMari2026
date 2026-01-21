@@ -1,9 +1,10 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import data from '../../../assets/data.json';
 
 @Component({
   selector: 'app-intro',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './intro.html',
   styleUrl: './intro.css',
 })

@@ -1,9 +1,10 @@
 import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-highlights',
-  imports: [],
+  imports: [CommonModule, DatePipe],
   templateUrl: './highlights.html',
   styleUrl: './highlights.css',
 })
@@ -17,7 +18,7 @@ export class Highlights {
       id: '2026-01-06_oahu',
       title: 'Back to Paradise',
       location: 'Oahu, Hawaii, US',
-      date: 'January 2026',
+      date: new Date(2026, 0, 6),
       description: "Our journey through O'ahu, Hawai'i, was a vibrant adventure, from snorkeling in electric-blue coves and hiking to emerald ridges to eating our way from legendary shrimp trucks to fresh poke on the sand.",
       imageUrl: "https://as1.ftcdn.net/v2/jpg/04/84/88/20/1000_F_484882005_H4dEJ1eHEh6tEvgituX3tnErK4zNo5qI.jpg",
       images: [
@@ -54,7 +55,7 @@ export class Highlights {
       id: '2026-01-01_theBigIsland',
       title: "Squad 30's trip",
       location: 'The Big Island, Hawaii, US',
-      date: 'January 2026',
+      date: new Date(2026, 0, 1),
       description: "To celebrate Tim's squad turning 30, our squad lived our values of adventure and connection on the Big Island, snorkeling with manta rays, hiking volcanic jungle trails, and witnessing the Hawai'i Volcanoes National Park.",
       imageUrl: "https://as1.ftcdn.net/v2/jpg/04/39/77/12/1000_F_439771243_0C9eLmcmQG1OyuE4BLA7kV6KETfhCyJ3.jpg",
       images: [
@@ -92,7 +93,7 @@ export class Highlights {
       id: '2025-10-28_taiwan',
       title: "Formosa",
       location: 'Taiwan',
-      date: 'October 2025',
+      date: new Date(2025, 9, 28),
       description: "We tasted Taiwan's vibrant soul through its legendary street food, from night market snacks to temple-side beef noodles, and experienced its serene beauty on mountain hikes, scenic train rides, and relaxing hot spring visits. This unforgettable journey perfectly blended thrilling urban flavors with peaceful natural escapes.",
       imageUrl: "https://as1.ftcdn.net/v2/jpg/02/31/15/90/1000_F_231159056_3pKLdtjtnmFht4jmWowzKmYB9obYePJX.jpg",
       images: [
@@ -139,7 +140,7 @@ export class Highlights {
       id: '2025-10-24_okinawa',
       title: "Ryukyu",
       location: 'Okinawa, Japan',
-      date: 'October 2025',
+      date: new Date(2025, 9, 24),
       description: "We savored the distinct flavors of Okinawa, from rich Shuri soba and sizzling yakiniku to fresh local street food along bustling Kokusai Dori. Our days were filled with exploring vibrant coral aquariums, tranquil spiritual hikes, artisan glass studios, and the island's unique cultural and natural wonders, from its crystal-clear coastline to its fascinating cave networks.",
       imageUrl: "https://images.unsplash.com/photo-1612476919598-a233d3692cc6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       images: [
