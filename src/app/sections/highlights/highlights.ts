@@ -31,7 +31,7 @@ export class Highlights {
         'assets/images/2026-01-06_oahu/6.JPG',
         'assets/images/2026-01-06_oahu/7.JPG',
       ],
-      photos: 146,
+      photos: 1127,
       days: '5',
       memories: 'Vibrant',
       highlights: [
@@ -70,7 +70,7 @@ export class Highlights {
         'assets/images/2026-01-01_theBigIsland/8.jpg',
         'assets/images/2026-01-01_theBigIsland/9.jpg',
       ],
-      photos: 51,
+      photos: 298,
       days: '6',
       memories: 'Transformative',
       highlights: [

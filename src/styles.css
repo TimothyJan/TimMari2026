@@ -1033,6 +1033,7 @@ p {
   position: relative;
   height: 250px;
   overflow: hidden;
+  border-radius: 20px 20px 0 0;
 }
 
 .highlight-image img {
@@ -1046,6 +1047,23 @@ p {
   transform: scale(1.1);
 }
 
+.highlight-item:hover .highlight-image::after {
+  opacity: 1;
+}
+
+.highlight-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 20px 20px 0 0;
+}
+
 .highlight-date {
   position: absolute;
   top: 20px;
@@ -1057,6 +1075,41 @@ p {
   font-weight: 600;
   color: #FF6B6B;
   backdrop-filter: blur(5px);
+}
+
+.highlight-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+  border-radius: 20px 20px 0 0;
+}
+
+.highlight-item:hover .highlight-overlay {
+  opacity: 1;
+}
+
+.highlight-view-details {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  background: rgba(255, 107, 107, 0.8);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
+}
+
+.highlight-item:hover .highlight-view-details {
+  transform: translateY(0);
 }
 
 .highlight-content {

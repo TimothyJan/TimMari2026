@@ -151,7 +151,7 @@
             <span class="location-text">{{ selectedTimelineItem.location }}</span>
           </div>
           <h2>{{ selectedTimelineItem.title }}</h2>
-          <div class="modal-date">{{ selectedTimelineItem.date }}</div>
+          <div class="modal-date">{{ selectedTimelineItem.date | date: 'MMMM yyyy' }}</div>
         </div>
         <div class="modal-body">
           <p class="modal-description">{{ selectedTimelineItem.description }}</p>

@@ -11,6 +11,10 @@
           <div class="highlight-image">
             <img [src]="highlight.imageUrl" alt="image" />
             <div class="highlight-date">{{ highlight.date | date: 'MMMM yyyy' }}</div>
+            <!-- Add overlay here -->
+            <div class="highlight-overlay">
+              <div class="highlight-view-details">View Details</div>
+            </div>
           </div>
           <div class="highlight-content">
             <div class="location-tag">
@@ -102,7 +106,7 @@
             <span class="location-text">{{ selectedHighlight.location }}</span>
           </div>
           <h2>{{ selectedHighlight.title }}</h2>
-          <div class="modal-date">{{ selectedHighlight.date }}</div>
+          <div class="modal-date">{{ selectedHighlight.date | date: 'MMMM yyyy'  }}</div>
         </div>
         <div class="modal-body">
           <p class="modal-description">{{ selectedHighlight.description }}</p>
