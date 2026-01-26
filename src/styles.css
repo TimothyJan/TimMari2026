@@ -1350,6 +1350,7 @@ p {
   justify-content: center;
   padding-top: 30px;
   border-top: 2px solid rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
 }
 
 .stat {
@@ -1432,7 +1433,14 @@ p {
   }
 
   .modal-stats {
-    gap: 5px;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .stat {
+    width: 100%;
+    max-width: 300px;
   }
 
   .stat-value {
@@ -3528,10 +3536,12 @@ p {
 }
 
 .stat-value {
-  font-size: 1.5rem;
+  display: block;
+  font-size: 3.6rem;
   font-weight: 700;
-  color: #2c3e50;
-  margin-bottom: 2px;
+  color: #FF6B6B;
+  margin-bottom: 5px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .stat-label {
