@@ -2777,6 +2777,7 @@ p {
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
+  padding-top: 10px;
 }
 
 .preview-tag {
