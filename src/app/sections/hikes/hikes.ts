@@ -23,8 +23,8 @@ interface Hike {
 export class Hikes implements OnInit {
 
   countriesTraveledString: string = "";
-  totalDistance: number = 277.06; // miles
-  totalElevation: number = 53211; // ft
+  totalDistance: number = data.hikeTotalDistance; // miles
+  totalElevation: number = data.hikeTotalElevation; // ft
   totalHikes: number = data.hikes.length;
 
   topHike: Hike = {
