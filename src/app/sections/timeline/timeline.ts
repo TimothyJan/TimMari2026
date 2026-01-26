@@ -359,7 +359,43 @@ export class Timeline {
         "Downtown Denver",
         "Angelo's Taverna"
       ]
-    }
+    },
+    {
+      id: '2024-09-25_seattle',
+      title: "Seattle for Josh and Emily's wedding",
+      location: 'Seattle WA',
+      date: new Date(2024, 9, 25),
+      description: "The trip centered on celebrating Josh and Emily's wonderful wedding at the Rosehill Community Center, with our time in Seattle filled by exploring iconic markets, parks, art, and enjoying fantastic local food and coffee.",
+      imageUrl: "https://images.unsplash.com/photo-1502175353174-a7a70e73b362?q=80&w=1426&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      images: [
+        'assets/images/2024-09-25_seattle/0.JPG',
+        'assets/images/2024-09-25_seattle/1.JPG',
+        'assets/images/2024-09-25_seattle/2.JPG',
+        'assets/images/2024-09-25_seattle/3.JPG',
+        'assets/images/2024-09-25_seattle/4.JPG',
+        'assets/images/2024-09-25_seattle/5.JPG',
+        'assets/images/2024-09-25_seattle/6.JPG',
+      ],
+      photos: 1811,
+      days: '5',
+      memories: 'Balanced',
+      highlights: [
+        "Josh and Emily's Wedding at Rosehill Community Center",
+        "Paseos",
+        "Kin Len Thai Night Bites",
+        "Pikes Place Market",
+        "Chihuly Garden and Glass",
+        "Starbucks Reserve Roastery",
+        "Josh and Emily's Wedding at Rosehill Community Center",
+        "Coffeeholic",
+        "University of Washington, Seattle, WA",
+        "Un Bien",
+        "Ballard Locks Fish Ladder",
+        "Fremont Troll",
+        "Discovery Park and Lighthouse",
+        "Kerry Park",
+      ]
+    },
   ];
   ngOnInit() {
     this.generateScrollerItems();
