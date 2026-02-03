@@ -363,7 +363,7 @@ export class Timeline {
     },
     {
       id: '2024-09-25_seattle',
-      title: "Seattle for Josh and Emily's wedding",
+      title: "Josh and Emily's wedding",
       location: 'Seattle WA',
       date: new Date(2024, 9, 25),
       description: "The trip centered on celebrating Josh and Emily's wonderful wedding at the Rosehill Community Center, with our time in Seattle filled by exploring iconic markets, parks, art, and enjoying fantastic local food and coffee.",
