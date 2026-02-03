@@ -110,6 +110,7 @@ export class Highlights {
         'assets/images/2025-10-28_taiwan/10.JPG',
         'assets/images/2025-10-28_taiwan/11.JPG',
         'assets/images/2025-10-28_taiwan/12.jpg',
+        'assets/images/2025-10-28_taiwan/13.jpg',
       ],
       photos: 819,
       days: '4',
