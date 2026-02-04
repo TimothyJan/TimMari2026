@@ -67,8 +67,6 @@ export class Highlights {
         'assets/images/2026-01-01_theBigIsland/5.JPG',
         'assets/images/2026-01-01_theBigIsland/6.JPG',
         'assets/images/2026-01-01_theBigIsland/7.jpg',
-        'assets/images/2026-01-01_theBigIsland/8.jpg',
-        'assets/images/2026-01-01_theBigIsland/9.jpg',
       ],
       photos: 298,
       days: '6',
