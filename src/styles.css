@@ -334,6 +334,7 @@ p {
     height: auto;
     width: fit-content;
     background: transparent;
+    overflow: visible; /* Add this line */
   }
 
   #header .nav-list ul li {
