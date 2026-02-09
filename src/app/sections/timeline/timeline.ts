@@ -365,7 +365,7 @@ export class Timeline {
       id: '2024-09-25_seattle',
       title: "Josh and Emily's wedding",
       location: 'Seattle WA',
-      date: new Date(2024, 9, 25),
+      date: new Date(2024, 8, 25),
       description: "The trip centered on celebrating Josh and Emily's wonderful wedding at the Rosehill Community Center, with our time in Seattle filled by exploring iconic markets, parks, art, and enjoying fantastic local food and coffee.",
       imageUrl: "https://images.unsplash.com/photo-1502175353174-a7a70e73b362?q=80&w=1426&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       images: [
