@@ -2712,6 +2712,10 @@ p {
   color: #2c3e50;
   margin: 10px 0;
   font-weight: 700;
+  line-height: 1.4;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 /* Generator Actions */
@@ -3803,6 +3807,10 @@ p {
   .stat-label {
     font-size: 1rem;
   }
+}
+
+.hike-stats .stat .stat-value {
+  margin-bottom: 8px;
 }
 
 /* Animation for Section Entry */
