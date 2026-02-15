@@ -48,11 +48,11 @@
           <div class="stat-label"><p>days married</p></div>
           <!-- <div class="stat-label"><p>days since we've met.</p></div> -->
         </div>
-        <div class="stat-item">
+        <div class="stat-item" (click)="scrollToSection('restaurants')" style="cursor: pointer;">
           <div class="stat-number">{{ animatedRestaurantCount }}</div>
           <div class="stat-label"><p>Restaurants</p></div>
         </div>
-        <div class="stat-item">
+        <div class="stat-item" (click)="scrollToSection('hikes')" style="cursor: pointer;">
           <div class="stat-number">{{ animatedHikeCount }}</div>
           <div class="stat-label"><p>Hikes</p></div>
         </div>
