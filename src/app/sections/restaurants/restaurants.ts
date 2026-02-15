@@ -42,6 +42,14 @@ export class Restaurants {
       cuisine: 'Thai Restaurant',
       description: 'Vibrant space serving a broad menu of Thai classics plus vegan options alongside craft cocktails.',
       imageUrl: "assets/images/restaurants/kin_len.jpg",
+    },
+    {
+      id: "phils_bbq",
+      name: "Phil's BBQ",
+      location: 'San Diego, CA',
+      cuisine: 'Barbecue Restaurant',
+      description: 'Casual eatery & bar for signature mesquite-barbecued babyback & beef ribs, plus sandwiches & sides.',
+      imageUrl: "assets/images/restaurants/phils_bbq.jpg",
     }
   ];
 }
