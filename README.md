@@ -1,5 +1,11 @@
 # TimMari2026
 Website for Mari and Tim.
+<ul>
+  <li>Built responsive Angular travel blog displaying countries/hikes/restaurants from local JSON</li>
+  <li>Developed random picker, image galleries with modals/carousels, and custom mobile-first UI with CSS animations</li>
+  <li>Managed full dev lifecycle: Git version control + automated GitHub Pages deployment</li>
+</ul>
+
 
 Process:
 <ul>
