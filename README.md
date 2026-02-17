@@ -73,7 +73,7 @@ Process:
     <ul>
       <li>Create card to display top hike data.</li>
       <li>Create cards to display hiking stats data.</li>
-      <li>Use random generator component to select randomly from hike json data and display list of hike data.<li> 
+      <li>Use random generator component to select randomly from hike json data and display list of hike data.</li> 
     </ul>
   </li>
 </ul>
