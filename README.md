@@ -19,7 +19,7 @@ Process:
   </li>
   <li>Install Angular CLI: <code>npm install -g @angular/cli</code></li>
   <li>Create new Angular Project. Adjust directory.</li>
-  <li>Deploy base project
+  <li>Deploy base project.
     <ul>
       <li>Configure angular.json for Github Pages.</li>
       <li>Install angular-cli-ghpages: <code>npm install angular-cli-ghpages --save-dev</code></li>
@@ -66,15 +66,14 @@ Process:
   <li>Code Restaurants section.
     <ul>
       <li>Create cards to display top 4 restaurants data.</li>
-      <li>Create random generator component to select randomly from restaurant json data and display list of restaurant data.<li> 
+      <li>Create random generator component to select randomly from restaurant json data and display list of restaurant data.</li> 
     </ul>
   </li>
   <li>Code Hikes section.
     <ul>
       <li>Create card to display top hike data.</li>
-      <li>Create cards to display hiking data.</li>
+      <li>Create cards to display hiking stats data.</li>
       <li>Use random generator component to select randomly from hike json data and display list of hike data.<li> 
     </ul>
   </li>
-  <li></li>
 </ul>
