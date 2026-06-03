@@ -29,13 +29,16 @@ export class RandomGenerator implements OnInit {
 
   assignItemList() {
     switch(this.itemLabel) {
+      case "hikes":
+        this.itemList = data.hikes;
+        break;
+      case "questions":
+        this.itemList = data.questions;
+        break;
       case "restaurants":
         const restaurants: string[] = data.restaurants;
         const desserts: string[]  = data.desserts;
         this.itemList = [...restaurants, ...desserts];
-        break;
-      case "hikes":
-        this.itemList = data.hikes;
         break;
       default:
         this.itemList = [];
