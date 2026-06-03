@@ -4290,3 +4290,151 @@ p {
   font-size: 1.4rem;
   color: rgba(44, 62, 80, 0.8);
 }
+
+/* ==== Love Questions Section ==== */
+#questions {
+  background: linear-gradient(135deg, #fdf4f4 0%, #fff5e8 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0;
+}
+
+#questions::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(255, 209, 102, 0.1));
+  border-radius: 50%;
+  transform: translate(50%, -50%);
+}
+
+#questions::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, rgba(255, 209, 102, 0.1), rgba(255, 107, 107, 0.1));
+  border-radius: 50%;
+  transform: translate(-50%, 50%);
+}
+
+#questions .questions {
+  flex-direction: column;
+  text-align: center;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+#questions .questions-header h1 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+#questions .section-subtitle {
+  font-size: 1.8rem;
+  color: rgba(44, 62, 80, 0.8);
+  line-height: 1.6;
+  font-weight: 300;
+  margin-top: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Custom styling for Questions Random Generator */
+#questions .random-generator {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 2px solid rgba(255, 107, 107, 0.2);
+}
+
+#questions .random-generator::before {
+  background: linear-gradient(90deg, #FF6B6B, #FFD166);
+}
+
+#questions .dice-icon {
+  filter: drop-shadow(0 5px 15px rgba(255, 107, 107, 0.3));
+}
+
+#questions .generator-button {
+  background: linear-gradient(135deg, #FF6B6B, #FFD166);
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+}
+
+#questions .generator-button:hover {
+  box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+}
+
+#questions .preview-tag.selected {
+  background: linear-gradient(135deg, #FF6B6B, #FFD166);
+  border-color: #FF6B6B;
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+
+#questions .stat-number {
+  color: #FF6B6B;
+}
+
+/* Heart animations for Questions section */
+#questions .questions-header .section-title span {
+  position: relative;
+  display: inline-block;
+}
+
+#questions .questions-header .section-title span::after {
+  content: '❤️';
+  position: absolute;
+  top: -15px;
+  right: -25px;
+  font-size: 2rem;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  #questions {
+    padding: 60px 0;
+  }
+
+  #questions .questions {
+    padding: 40px 20px;
+  }
+
+  #questions .section-subtitle {
+    font-size: 1.6rem;
+  }
+
+  #questions .random-generator {
+    margin-top: 40px;
+    padding-top: 30px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #questions .section-subtitle {
+    font-size: 1.4rem;
+  }
+
+  #questions .questions-header .section-title span::after {
+    top: -10px;
+    right: -20px;
+    font-size: 1.6rem;
+  }
+}
