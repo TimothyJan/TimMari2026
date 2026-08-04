@@ -32,6 +32,9 @@ export class RandomGenerator implements OnInit {
       case "hikes":
         this.itemList = data.hikes;
         break;
+      case "films":
+        this.itemList = data.films;
+        break;
       case "questions":
         this.itemList = data.questions;
         break;

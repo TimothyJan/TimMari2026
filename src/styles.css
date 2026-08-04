@@ -4438,3 +4438,600 @@ p {
     font-size: 1.6rem;
   }
 }
+
+/* ==== FILMS SECTION ==== */
+#films {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0;
+}
+
+#films::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(255, 209, 102, 0.1));
+  border-radius: 50%;
+  transform: translate(50%, -50%);
+}
+
+#films::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, rgba(78, 205, 196, 0.1), rgba(6, 214, 160, 0.1));
+  border-radius: 50%;
+  transform: translate(-50%, 50%);
+}
+
+#films .films {
+  flex-direction: column;
+  text-align: center;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Films Header */
+.films-header {
+  margin-bottom: 40px;
+}
+
+.films-header h1 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.films-header .section-subtitle {
+  font-size: 1.8rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  font-weight: 300;
+  margin-top: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Single Film Container */
+.films-container {
+  max-width: 600px;
+  margin: 60px auto 0;
+}
+
+/* Film Card */
+.film-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+  position: relative;
+  border: 2px solid rgba(255, 107, 107, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.film-card.top-card {
+  border-color: #FFD166;
+  box-shadow: 0 15px 40px rgba(255, 209, 102, 0.2);
+  position: relative;
+  overflow: visible;
+}
+
+.film-card.top-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 25px 50px rgba(255, 209, 102, 0.3);
+}
+
+/* Rank Badge */
+.film-card .rank-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, #FF6B6B, #FFD166);
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+  animation: badgePulse 2s infinite;
+}
+
+/* Film Image */
+.film-image {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+}
+
+.film-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.film-card:hover .film-image img {
+  transform: scale(1.05);
+}
+
+.film-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 20px;
+  opacity: 1;
+}
+
+.film-rank-text {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 8px 15px;
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+}
+
+/* Film Content */
+.film-content {
+  padding: 30px;
+  text-align: left;
+}
+
+.film-header {
+  margin-bottom: 15px;
+}
+
+.film-name {
+  font-size: 2.4rem;
+  color: white;
+  margin-bottom: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.film-meta {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+/* Genre Badge */
+.genre {
+  background: rgba(255, 107, 107, 0.2);
+  color: #FF6B6B;
+  padding: 6px 14px;
+  border-radius: 15px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 2px solid rgba(255, 107, 107, 0.3);
+}
+
+.year {
+  color: #FFD166;
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  background: rgba(255, 209, 102, 0.1);
+  border-radius: 15px;
+  border: 2px solid rgba(255, 209, 102, 0.3);
+}
+
+/* Film Director */
+.film-director {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.director-icon {
+  color: #FFD166;
+  font-size: 1.4rem;
+}
+
+.director-text {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+/* Film Description */
+.film-description {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.5rem;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Film Stats */
+.film-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin: 20px 0;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.film-stats .stat {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.film-stats .stat:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+.film-stats .stat-icon {
+  font-size: 2.2rem;
+  min-width: 40px;
+  text-align: center;
+}
+
+.film-stats .stat-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.film-stats .stat-value {
+  display: block;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #FFD166;
+  margin-bottom: 5px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.film-stats .stat-label {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+/* Special Effects for Top Card */
+.film-card.top-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #FF6B6B, #FFD166, #4ECDC4);
+  opacity: 1;
+  animation: gradientFlow 3s ease-in-out infinite;
+  background-size: 200% 200%;
+}
+
+.film-card.top-card::after {
+  content: '🎬';
+  position: absolute;
+  top: -25px;
+  right: -25px;
+  font-size: 4.5rem;
+  opacity: 1;
+  transform: rotate(15deg);
+  z-index: 2;
+  animation: trophyFloat 3s ease-in-out infinite;
+  filter: drop-shadow(0 5px 15px rgba(255, 215, 102, 0.5));
+}
+
+/* Cinema Elements Decoration */
+.cinema-elements {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cinema-element {
+  position: absolute;
+  font-size: 2.5rem;
+  opacity: 0.3;
+  animation: float 8s ease-in-out infinite;
+}
+
+.cinema-element.popcorn {
+  top: 10%;
+  left: 5%;
+  color: #FFD166;
+  animation-delay: 0s;
+}
+
+.cinema-element.film {
+  top: 20%;
+  right: 8%;
+  color: #FF6B6B;
+  animation-delay: 1s;
+}
+
+.cinema-element.clapper {
+  bottom: 30%;
+  left: 10%;
+  color: #4ECDC4;
+  animation-delay: 2s;
+}
+
+.cinema-element.ticket {
+  bottom: 20%;
+  right: 5%;
+  color: #FFD166;
+  animation-delay: 3s;
+}
+
+/* Random Generator Customization for Films */
+#films .random-generator {
+  margin-top: 80px;
+  padding-top: 60px;
+  border-top: 2px solid rgba(255, 107, 107, 0.2);
+  position: relative;
+}
+
+#films .random-generator::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #FF6B6B, #FFD166);
+  border-radius: 2px;
+}
+
+#films .generator-header .section-title {
+  color: white;
+}
+
+#films .generator-header .section-title span {
+  color: #FFD166;
+}
+
+#films .generator-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 107, 107, 0.2);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+#films .generator-card:hover {
+  border-color: #FFD166;
+  box-shadow: 0 20px 50px rgba(255, 209, 102, 0.15);
+}
+
+#films .generator-card::before {
+  background: linear-gradient(90deg, #FF6B6B, #FFD166);
+}
+
+#films .dice-icon {
+  color: #FFD166;
+  filter: drop-shadow(0 5px 15px rgba(255, 209, 102, 0.3));
+}
+
+#films .generator-title {
+  color: white;
+}
+
+#films .result-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 107, 107, 0.2);
+}
+
+#films .result-name {
+  color: white;
+}
+
+#films .generator-button {
+  background: linear-gradient(135deg, #FF6B6B, #FFD166);
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+}
+
+#films .generator-button:hover {
+  box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+}
+
+#films .generator-note {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#films .generator-note strong {
+  color: #FFD166;
+}
+
+/* Item List Preview */
+#films .item-list-preview {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 107, 107, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+#films .preview-title {
+  color: white;
+}
+
+#films .preview-title::after {
+  background: linear-gradient(90deg, #FF6B6B, #FFD166);
+}
+
+#films .preview-tag {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#films .preview-tag:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+#films .preview-tag.selected {
+  background: linear-gradient(135deg, #FF6B6B, #FFD166);
+  color: white;
+  border-color: #FF6B6B;
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+
+#films .toggle-button {
+  background: linear-gradient(135deg, #FF6B6B, #FFD166);
+  color: white;
+}
+
+#films .toggle-button:hover {
+  background: linear-gradient(135deg, #FFD166, #FF6B6B);
+  box-shadow: 0 12px 25px rgba(255, 107, 107, 0.4);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  #films {
+    padding: 60px 0;
+  }
+
+  #films .films {
+    padding: 40px 20px;
+  }
+
+  #films .films-header .section-subtitle {
+    font-size: 1.6rem;
+  }
+
+  .films-container {
+    max-width: 500px;
+    margin: 40px auto 0;
+  }
+
+  .film-stats {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .film-card.top-card::after {
+    top: -15px;
+    right: -15px;
+    font-size: 3.5rem;
+  }
+
+  .film-card .rank-badge {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+  }
+
+  .film-image {
+    height: 220px;
+  }
+
+  #films .random-generator {
+    margin-top: 60px;
+    padding-top: 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .films-header .section-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .film-content {
+    padding: 20px;
+  }
+
+  .film-name {
+    font-size: 2rem;
+  }
+
+  .film-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .film-description {
+    font-size: 1.4rem;
+  }
+
+  .film-card.top-card::after {
+    top: -10px;
+    right: -10px;
+    font-size: 3rem;
+  }
+
+  .cinema-element {
+    font-size: 2rem;
+  }
+
+  .film-stats .stat {
+    padding: 12px;
+  }
+
+  .film-stats .stat-icon {
+    font-size: 1.8rem;
+  }
+
+  .film-stats .stat-value {
+    font-size: 2.2rem;
+  }
+
+  .film-stats .stat-label {
+    font-size: 1rem;
+  }
+}
+
+/* Animation for Section Entry */
+@keyframes filmCardEntry {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.film-card {
+  animation: filmCardEntry 0.8s ease-out;
+}

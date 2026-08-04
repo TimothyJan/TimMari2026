@@ -1,0 +1,63 @@
+<section id="films">
+  <div class="films container">
+    <div class="films-header">
+      <h1 class="section-title">Our <span>#1</span> Film</h1>
+      <p class="section-subtitle">From all the movies we've watched together, this is the one that captured our hearts. A cinematic experience that brought us closer and created memories we'll treasure forever.</p>
+    </div>
+
+    <div class="films-container">
+      <div class="film-card top-card">
+        <div class="rank-badge">#1</div>
+
+        <div class="film-image">
+          <img [src]="topFilm.imageUrl" [alt]="topFilm.name" />
+          <div class="film-overlay">
+            <div class="film-rank-text">Top Film</div>
+          </div>
+        </div>
+
+        <div class="film-content">
+          <div class="film-header">
+            <h3 class="film-name">{{ topFilm.name }}</h3>
+            <div class="film-meta">
+              <span class="genre">{{ topFilm.genre }}</span>
+              <span class="year">{{ topFilm.year }}</span>
+            </div>
+          </div>
+
+          <div class="film-director">
+            <span class="director-icon">🎬</span>
+            <span class="director-text">{{ topFilm.director }}</span>
+          </div>
+
+          <p class="film-description">{{ topFilm.description }}</p>
+
+          <div class="film-stats">
+            <div class="stat">
+              <span class="stat-icon">⭐</span>
+              <div class="stat-details">
+                <span class="stat-value">{{ topFilm.rating }}</span>
+                <span class="stat-label">Rating</span>
+              </div>
+            </div>
+            <div class="stat">
+              <span class="stat-icon">⏱️</span>
+              <div class="stat-details">
+                <span class="stat-value">{{ topFilm.duration }}</span>
+                <span class="stat-label">Duration</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <app-random-generator
+      [title]="'Films'"
+      [itemLabel]="'films'"
+      [itemTypeName]="'film'">
+    </app-random-generator>
+
+  </div>
+</section>

@@ -7,6 +7,7 @@ import { Highlights } from "./sections/highlights/highlights";
 import { Timeline } from "./sections/timeline/timeline";
 import { Restaurants } from "./sections/restaurants/restaurants";
 import { Hikes } from "./sections/hikes/hikes";
+import { Films } from './sections/films/films';
 import { Questions } from "./sections/questions/questions";
 
 @Component({
@@ -19,6 +20,7 @@ import { Questions } from "./sections/questions/questions";
     Timeline,
     Restaurants,
     Hikes,
+    Films,
     Questions
 ],
   templateUrl: './app.html',
